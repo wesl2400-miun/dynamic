@@ -10,37 +10,53 @@ const stats = new Stats();
   const courses = stats
     .popCourses(STAT_TYPE.COURSE, 6);
   const programs = stats
-    .popCourses(STAT_TYPE.PROGRAM, 6);
+    .popCourses(STAT_TYPE.PROGRAM, 5);
 
-const datasets = (stats) => [{
+const courData = [{
   barPercentage: 1.0,
   maxBarThickness: 20,
   label: 'Totalt antal sökande',
-  data: stats.map(stat => {
+  data: courses.map(stat => {
     return { 
       x: format(stat.name), 
       y: stat.total }
   })
 }];
 
-const opts = (stats) => {
-  return {
-    indexAxis: 'x',
-    scales: {
-      x: { ticks: {
-        callback: (value, index, ticks) => 
-          stats[index].name.split(' ')}
-      }
+const courOpts = {
+  indexAxis: 'x',
+  scales: {
+    x: { ticks: {
+      callback: (value, index, ticks) => 
+      courses[index].name.split(' ')}
     }
   }
 };
 
 const courNode = node(NODE_ID.COURSES);
+const progNode = node(NODE_ID.PROGRAMS);
 
 new Chart(
  courNode, {
     type: 'bar',
-    options: opts(courses),
-    data: { datasets: datasets(courses) }
+    options: courOpts,
+    data: { datasets: courData}
+  }
+);
+
+const progData = {
+  labels: programs.map(
+    course => course.name),
+  datasets: [{
+    label: 'Mest sökta program',
+    data: programs.map(
+      course => course.total),
+  }]
+}
+
+new Chart(
+ progNode, {
+    type: 'pie',
+    data: progData
   }
 );
