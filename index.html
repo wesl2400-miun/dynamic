@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./src/ui/assets/mittfavicon.svg">
+    <link rel="stylesheet" href="./src/ui/css/root.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description" content="Frontend-baserad webbutveckling - Läs mer om Laboration 3">
+    <title>Laboration 4 - Frontend-baserad webbutveckling</title>
+  </head>
+  <body class="body">
+    <!-- Sidhuvud -->
+    <header>
+
+      <!-- Navigeringsmenyn -->
+      <div class="menu">
+        <button id="menu-btn"></button>
+      </div>
+
+      <!-- Logotyp -->
+      <div class="logo">
+        <a id="logo-link" href="./index.html"></a>
+      </div>
+
+      <!-- Navigeringsfältet -->
+      <nav id="routes">
+        <ul>
+          <li><a href="./index.html">Laboration</a></li>
+          <li><a href="./sass.html">Sass</a></li>
+          <li><a href="./gallery.html">Bilder</a></li>
+          <li><a href="./animering.html">Animeringar</a></li>
+          <li><a href="#">Exempel 3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Huvudinnehåll -->
+    <main>
+      <h1 id="page-title">Laboration 4</h1>
+      <section class="card">
+        <h2>Om uppgiften</h2>
+        <p>Uppgiften går ut på att skapa 3 olika animationer med hjälp av CSS. Animationerna ska inkluderas i en separat sida som heter animering.html. En animation ska visa ett rörligt objekt, en ska vara av typen text eller bildanimation och en ska aktiveras av användaren med ett valfritt interaktivt HTML-element såsom en knapp eller ett formulär.</p>
+      </section>
+    </main>
+    <!-- Skript som genererar navigeringsfältet och logotypen -->
+    <script type="module" src="./src/ui/views/nav-view.js"></script>
+  </body>
+</html>

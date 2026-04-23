@@ -1,0 +1,15 @@
+// Variabler för dimensioner
+$font-size-header: 22px;
+$max-width: 600px;
+
+// Ändrar bredden på ett element
+@mixin border-width($width) {
+  width: $width;
+  box-sizing: border-box;
+}
+
+// Tar bort marginaler
+@mixin no-margins {
+  margin: 0;
+  padding: 0;
+}

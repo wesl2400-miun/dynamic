@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./src/ui/assets/mittfavicon.svg">
+    <link rel="stylesheet" href="./src/ui/css/root.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description" content="Frontend-baserad webbutveckling - Läs mer om Sass">
+    <title>Sass - Frontend-baserad webbutveckling</title>
+  </head>
+  <body class="body">
+    <!-- Sidhuvud -->
+    <header>
+
+      <!-- Navigeringsmenyn -->
+      <div class="menu">
+        <button id="menu-btn"></button>
+      </div>
+      
+      <!-- Logotyp -->
+      <div class="logo">
+        <a id="logo-link" href="./index.html"></a>
+      </div>
+
+      <!-- Navigeringsfältet -->
+      <nav id="routes">
+        <ul>
+          <li><a href="./index.html">Laboration</a></li>
+          <li><a href="./sass.html">Sass</a></li>
+          <li><a href="./gallery.html">Bilder</a></li>
+          <li><a href="./animering.html">Animeringar</a></li>
+          <li><a href="#">Exempel 3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Huvudinnehåll -->
+    <main>
+      <h1 id="page-title">Sass</h1>
+      <section class="card">
+        <h2>Utvärdering av arbetet med Sass</h2>
+        <p>Min uppfattning är att Sass inte medför något mervärde, åtminstone inte i min egen arbetsprocess. Sådant som jag annars gör inom loppet av en timme tar flera timmar att göra med Sass. Sass introducerar extra beroenden, extra transpileringssteg, extra filer, extra syntax och extra buggar (nu Sass-relaterade).</p>
+        <p>I vanliga fall behöver jag bara ha koll på mina CSS-filer. Med Sass måste jag däremot ha koll på både CSS- och Sass-filer. Jag måste kontrollera att både Sass- och CSS-syntaxen stämmer, att Sass-funktioner inte är 'depracated' och att Sass genererar CSS-regler på det sätt jag har tänkt mig. Under min arbetsprocess har det nämligen hänt att funktionerna color.darken() och color.lighten() visat sig vara utdaterade; något som inte ens framgår tydligt i Sass-dokumentationen. Sass har dessutom vid flera tillfällen genererat mina CSS-regler i fel ordning och överskrivit klasser som inte bör överskrivas.</p>
+        <p>Att använda Sass är för mig som att ta en extra hammare för att slå på en hammare i syfte att slå en spik; helt meningslöst. Vad är egentligen fördelen? Att jag kan skriva samma sak fast med en annan syntax? Att det tillåter mig att använda statiska if-else-satser som transpileras till samma vanliga CSS som jag själv hade kunnat skriva direkt och dessutom testa omedelbart utan extra huvudvärk?</p>
+        <p>Men förstås allt handlar om smak. Sass är inte min grej. Hur mycket än nätet försöker hjärntvätta mig till att använda det kommer jag inte använda det i mina egna projekt. För mig är ett lyckat verktyg något som gör sådant jag antingen inte kan eller har svårt att göra själv. Ett exempel på ett lyckat verktyg är för mig Vite Image Tools. Att generera flera responsiva bilder manuellt är en möda så det verktyget uppskattar jag verkligen.</p>
+        <p>Den enda fördelen med Sass som jag kan tänka mig är mixins och arv som tillåter återanvändning av samma CSS-regler. Men som jag redan har skrivit i föregående stycket: det tar mig fortfarande mindre tid att repetera samma CSS-regler än att hålla på med Sass och CSS samtidigt. Nyttan med dessa Sass-funktioner är för liten för att riskera ett instabilt projekt som bryter med varje Sass-uppdatering.</p>
+      </section>
+    </main>
+    <!-- Skript som genererar navigeringsfältet och logotypen -->
+    <script type="module" src="./src/ui/views/nav-view.js"></script>
+  </body>
+</html>

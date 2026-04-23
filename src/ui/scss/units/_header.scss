@@ -1,0 +1,30 @@
+@use '../base/dimens';
+@use '../base/layout';
+@use '../base/colors';
+
+
+// Stillmallen för sidhuvudet
+header {
+  @include dimens.border-width(100%);
+  @include layout.flex(column, center, center, 'visible');
+  @include dimens.no-margins;
+}
+
+// Datorlayouten för sidhuvudet
+@media screen and (min-width: 600px) {
+  header {
+    max-width: 40%;
+    justify-content: start;
+    border-right: 1px solid colors.$accent-light;
+    @include colors.background('primary', 'light');
+    height: 300vh;
+  }
+}
+
+// Nattläget för sidhuvudet
+@media screen and (min-width: 600px) and (prefers-color-scheme: dark) {
+  header {
+    border-right: 1px solid colors.$accent-dark;
+    @include colors.background('primary', 'dark');
+  }
+}

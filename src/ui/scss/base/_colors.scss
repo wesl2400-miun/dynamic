@@ -1,0 +1,69 @@
+@use 'sass:color';
+
+// Definierar färgvariabler och bockar av grundkravet för Sass variabler och color-functions
+$primary-light: #ffffff;
+$surface-light: color.scale($primary-light, $blackness: 20%);
+$accent-light: #353535;
+$accent-variant-light: #294285;
+$primary-dark: #353535;
+$surface-dark: color.scale($primary-dark, $whiteness: 20%);;
+$accent-dark: #CFCFCF;
+$accent-variant-dark: #FFFF9E;
+
+// Ändrar bakgrundsfärgen och bockar av grundkravet för if-satser och mixins
+@mixin background($color, $mode) {
+  @if $color == 'primary' {
+    @if $mode == 'dark' {
+      background-color: $primary-dark;
+    } @else {
+      background-color: $primary-light;
+    }
+  } @else if $color == 'accent' {
+    @if $mode == 'dark' {
+      background-color: $accent-dark;
+    } @else {
+      background-color: $accent-light;
+    }
+  } @else if $color == 'accent-variant' {
+    @if $mode == 'dark' {
+      background-color: $accent-variant-dark;
+    } @else {
+      background-color: $accent-variant-light;
+    }
+  } @else if $color == 'surface' {
+    @if $mode == 'dark' {
+      background-color: $surface-dark;
+    } @else {
+      background-color: $surface-light;
+    }
+  } 
+}
+
+// Ändrar förgrundsfärgen
+@mixin foreground($color, $mode) {
+  @if $color == 'primary' {
+    @if $mode == 'dark' {
+      color: $primary-dark;
+    } @else {
+      color: $primary-light;
+    }
+  } @else if $color == 'accent' {
+    @if $mode == 'dark' {
+      color: $accent-dark;
+    } @else {
+      color: $accent-light;
+    }
+  } @else if $color == 'accent-variant' {
+    @if $mode == 'dark' {
+      color: $accent-variant-dark;
+    } @else {
+      color: $accent-variant-light;
+    }
+  } @else if $color == 'surface' {
+    @if $mode == 'dark' {
+      color: $surface-dark;
+    } @else {
+      color: $surface-light;
+    }
+  } 
+}

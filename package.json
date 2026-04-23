@@ -1,0 +1,21 @@
+{
+  "name": "sasstest",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run sass && vite build",
+    "preview": "vite preview",
+    "sass": "sass ./src/ui/scss:./src/ui/css"
+  },
+  "devDependencies": {
+    "vite": "^8.0.4"
+  },
+  "dependencies": {
+    "sass": "^1.99.0",
+    "svgo": "^4.0.1",
+    "vite-imagetools": "^10.0.0",
+    "vite-plugin-image-optimizer": "^2.0.3"
+  }
+}

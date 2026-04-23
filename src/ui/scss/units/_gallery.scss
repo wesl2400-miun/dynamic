@@ -1,0 +1,27 @@
+@use '../base/dimens';
+@use '../base/layout';
+@use '../base/colors';
+
+// Stillmallen för bilder
+#gallery {
+  @include dimens.border-width(100%);
+  @include layout.flex(column, center, center, 'visible');
+  @include dimens.no-margins;
+  @include colors.background('primary', 'light');
+  padding: 0.5rem;
+}
+
+#gallery picture img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  min-width: 250px;
+}
+
+// Nattläget för bilder
+@media (prefers-color-scheme: dark) {
+  #gallery {
+    @include colors.background('primary', 'dark');
+  }
+}
+

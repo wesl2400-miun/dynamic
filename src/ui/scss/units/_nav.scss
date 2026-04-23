@@ -1,0 +1,97 @@
+@use '../base/layout';
+@use '../base/dimens';
+@use '../base/colors';
+
+
+// Stillmallen för navigeringsfältet
+.menu {
+  @include dimens.border-width(100%);
+  height: 45px;
+  @include layout.flex(row, end, center, 'visible');
+  gap: 0.7rem;
+  padding-right: 0.5rem;
+  @include colors.background('primary', 'light');
+  border-bottom: 1px solid colors.$accent-light;
+}
+
+.img-btn {
+  border: none;
+  background: none;
+  @include dimens.no-margins;
+  @include colors.foreground('accent', 'light');
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+// Bocka av grundkravet för Sass ärvning
+#menu-btn {
+  @extend .img-btn;
+}
+
+#theme-btn {
+  @extend .img-btn;
+}
+
+#routes {
+  @include dimens.border-width(100%);
+  @include layout.flex(column, center, center, 'hidden');
+  @include dimens.no-margins;
+}
+
+// Gäller rutterna i ruttlistan och bockar av grundkravet för nesting
+#routes ul {
+  list-style: none;
+  @include dimens.border-width(100%);
+  @include layout.flex(column, center, center, 'visible');
+  @include dimens.no-margins;
+  
+  li, a {
+    line-height: 40px;
+    @include dimens.border-width(100%);
+    @include layout.flex(column, center, center, 'visible');
+  }
+
+  li {
+    border-radius: 0 0 10px 10px;
+    border-bottom: 1px solid colors.$accent-light;
+    @include colors.background('primary', 'light');
+  }
+
+  a, a:link, a:visited {
+    @include colors.foreground('accent', 'light');
+    text-decoration: none;
+    font-size: dimens.$font-size-header;
+    font-weight: 400;
+
+    &:hover {
+      @include colors.foreground('accent-variant', 'light');
+    }
+  }
+}
+
+// Nattläget för navigeringsfältet
+@media (prefers-color-scheme: dark) {
+  .menu {
+    @include colors.background('primary', 'dark');
+    border-bottom: 1px solid colors.$accent-dark;
+  }
+
+  .img-btn {
+    @include colors.foreground('accent', 'dark');
+  }
+
+  #routes ul {
+    a, a:link, a:visited {
+      @include colors.foreground('accent', 'dark');
+
+      &:hover {
+        @include colors.foreground('accent-variant', 'dark');
+      }
+    }
+    li {
+      border-bottom: 1px solid colors.$accent-dark;
+      @include colors.background('primary', 'dark');
+    }
+  }
+}

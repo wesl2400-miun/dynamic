@@ -1,0 +1,29 @@
+@use '../base/layout';
+@use '../base/dimens';
+@use '../base/colors';
+
+// Stillmallen för huvudinnehållet
+main {
+  @include dimens.border-width(100%);
+  height: 100%;
+  @include layout.flex(column, center, center, 'visible');
+  @include dimens.no-margins;
+  margin: 1rem 0;
+  @include colors.background('surface', 'light');
+}
+
+// Datorlayouten för huvudinnehållet
+@media screen and (min-width: 600px) {
+  main {
+    max-width: dimens.$max-width;
+    align-items: start;
+    margin: 2rem;
+  }
+}
+
+// Nattläget för huvudinnehållet
+@media (prefers-color-scheme: dark) {
+  main {
+    @include colors.background('surface', 'dark');
+  }
+}

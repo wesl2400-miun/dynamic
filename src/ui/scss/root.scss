@@ -1,0 +1,66 @@
+@use './base/colors';
+@use './base/dimens';
+@use './base/layout';
+@use './units/nav';
+@use './units/card';
+@use './units/header';
+@use './units/main';
+@use './units/logo';
+@use './units/gallery';
+@use './base/anime';
+@use './units/button';
+
+// Stillmallen för hela body-elemenetet
+body {
+  @include layout.flex(column, center, center, 'visible');
+  @include dimens.no-margins;
+  width: 100vw;
+  @include colors.background('surface', 'light');
+  @include colors.foreground('accent', 'light');
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 18px;
+}
+
+// Datorlayouten för hela body-elementet
+@media screen and (min-width: 600px) {
+  body {
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+  }
+}
+
+// Nattläget för hela body-elementet
+@media (prefers-color-scheme: dark) {
+  body {
+    @include colors.background('surface', 'dark');
+    @include colors.foreground('accent', 'dark');
+  }
+}
+
+// Gäller all h1-rubriker
+h1 {
+  @include dimens.border-width(100%);
+  @include layout.flex(column, center, center, 'visible');
+  font-size: dimens.$font-size-header;
+  height: 40px;
+  @include colors.background('primary', 'light');
+  border-top: 1px solid colors.$accent-light;
+  border-bottom: 1px solid colors.$accent-light;
+  margin: 0;
+}
+
+// Nattläget för alla h1-rubriker
+@media (prefers-color-scheme: dark) {
+  h1 {
+    @include colors.background('primary', 'dark');
+    border-top: 1px solid colors.$accent-dark;
+    border-bottom: 1px solid colors.$accent-dark;
+  }
+}
+
+// Gäller alla h2-rubriker
+h2 {
+  font-size: dimens.$font-size-header;
+}
+

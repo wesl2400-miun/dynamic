@@ -1,0 +1,157 @@
+@use '../base/colors';
+@use '../base/dimens';
+
+// Animationen för rubrik i demo1
+@keyframes text1 {
+  from {
+    width: 0;
+    opacity: 0;
+    transform: translateX(100%) scale(2);
+  }
+
+  to {
+    width: 100%;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+// Animationen för brödtext i demo1
+@keyframes text2 {
+  from {
+    @include colors.foreground('accent', 'dark');
+    width: 0;
+  }
+
+  to {
+    @include colors.foreground('accent', 'light');
+    width: 100%;
+  }
+}
+
+// Nattläget för text2-animationen
+@media (prefers-color-scheme: dark) {
+  @keyframes text2 {
+    from {
+      @include colors.foreground('accent', 'light');
+      width: 0;
+    }
+    to {
+      @include colors.foreground('accent', 'dark');
+      width: 100%;
+    }
+  }
+}
+
+// Klasserna som startar text-animationerna
+.text-anime1 {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  font-style: italic;
+  animation: 2s linear text1;
+  transition: all 1s ease-out;
+}
+
+.text-anime2 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: 4s linear text2;
+  transition: all 2s ease-in;
+}
+
+// Klassen som startar knapp-hover-effekten
+.btn-anime {
+  cursor: pointer;
+
+  &:hover {
+    animation: 1s linear btn-hover infinite;
+    transition: color 1s ease-in-out;
+  }
+}
+
+// Animationen för knapp-hover-effekten
+@keyframes btn-hover {
+    from {
+      transform: scale(1);
+      @include colors.background('accent', 'light');
+    }
+    to {
+      transform: scale(1);
+      @include colors.background('accent', 'light');
+    }
+    50% {
+      transform: scale(1.2);
+      @include colors.background('accent-variant', 'light');
+    }
+  }
+
+// Nattläget för text2-animationen
+@media (prefers-color-scheme: dark) {
+  @keyframes btn-hover {
+    from {
+      transform: scale(1);
+      @include colors.background('accent', 'dark');
+    }
+    to {
+      transform: scale(1);
+      @include colors.background('accent', 'dark');
+    }
+    50% {
+      transform: scale(1.2);
+      @include colors.background('accent-variant', 'dark');
+    }
+  }
+}
+
+// Animationen för bilden i demo2
+@keyframes image {
+  from {
+    transform: scaleX(1);
+  }
+
+  50% {
+    transform:  scaleX(-1) scale3d(0.3, 0.7, 1);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+// Klassen som startar bildanimationen i demo2
+.image-anime {
+  img {
+    animation: 2s linear image;
+    transition: all 5s ease-out;
+  }
+}
+
+// Animationen för fotbollbilden
+@keyframes football {
+  from {
+    transform: translateX(0) rotate(0);
+  }
+
+  50% {
+    transform: translateX(280px) rotate(360deg);
+  }
+
+  to {
+    transform: translateX(0) rotate(-200deg);
+  }
+}
+
+// Klassen som startar animationen för fotbollbilden
+.football-anime {
+  @include colors.foreground('accent', 'light');
+  animation: 1s linear football;
+  transition: color 2s ease-in;
+}
+
+// Nattläget för klassen som startar animationen för fotbollbilden
+@media (prefers-color-scheme: dark) {
+  .football-anime {
+    @include colors.foreground('accent', 'dark');
+  }
+}
