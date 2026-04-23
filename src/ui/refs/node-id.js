@@ -10,5 +10,7 @@ export const NODE_ID = Object.freeze({
   PROV_TEXT: 'prov-text',
   DEMO_BTN2: 'demo-btn2',
   DEMO_BTN3: 'demo-btn3',
-  FOOTBALL: 'football'
+  FOOTBALL: 'football',
+  COURSES: 'courses',
+  PROGRAMS: 'programs'
 });

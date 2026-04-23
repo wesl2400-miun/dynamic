@@ -1,0 +1,7 @@
+@use '../base/layout';
+
+// Stilmallen för diagram
+.diagram {
+  @include layout.flex(column, center, center, 'visible');
+  width: 300px;
+}

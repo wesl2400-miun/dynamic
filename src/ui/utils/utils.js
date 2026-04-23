@@ -32,3 +32,7 @@ export const picture = (img, alt, parent) => {
 export const addSvg = (parent, svg) => {
   parent.innerHTML = svg;
 }
+
+export const format = (str) => {
+  return str.replaceAll(' ', '\n');
+}

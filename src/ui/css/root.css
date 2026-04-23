@@ -362,6 +362,14 @@ main {
     color: #353535;
   }
 }
+.diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+}
+
 body {
   display: flex;
   justify-content: center;

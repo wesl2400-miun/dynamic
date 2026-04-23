@@ -41,9 +41,23 @@
       <h1 id="page-title">Diagram</h1>
 
       <section class="card">
+        <h2>Mest sökta kurser</h2>
+        <div class="diagram">
+          <!-- Diagram genereras dynamiskt -->
+          <canvas id="courses"></canvas>
+        </div>
       </section>
 
+      <section class="card">
+        <h2>Mest sökta program</h2>
+        <div class="diagram">
+          <!-- Diagram genereras dynamiskt -->
+          <canvas id="program"></canvas>
+        </div>
+      </section>
     </main>
+    <!-- Skript som genererar diagram -->
+    <script type="module" src="./src/ui/views/chart-view.js"></script>
 
     <!-- Skript som genererar navigeringsfältet och logotypen -->
     <script type="module" src="./src/ui/views/nav-view.js"></script>
