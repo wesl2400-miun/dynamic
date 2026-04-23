@@ -5,6 +5,8 @@ import { format, node } from "../utils/utils.js";
 import { Chart } from "chart.js/auto";
 import { NODE_ID } from "../refs/node-id.js";
 
+Chart.defaults.color = '#363636';
+
 const stats = new Stats();
   await stats.init(URL.COURSES);
   const courses = stats

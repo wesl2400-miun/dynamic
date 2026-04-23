@@ -4,4 +4,6 @@
 .diagram {
   @include layout.flex(column, center, center, 'visible');
   width: 300px;
+  background-color: rgb(233, 244, 255);
+  border-radius: 10px;
 }
