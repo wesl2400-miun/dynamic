@@ -28,7 +28,6 @@ export class LocForm {
       'click', (event) => {
       event.preventDefault();
       const { value } = this._input;
-      console.log(value)
       onClick(value, this._err);
     })
   }
