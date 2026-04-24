@@ -344,7 +344,7 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.btn-wrapper button {
+.btn-wrapper button, .btn-wrapper input[type=submit] {
   line-height: 1.5rem;
   font-size: 1.2rem;
   padding: 0.2rem 1rem;
@@ -357,7 +357,7 @@ main {
 }
 
 @media (prefers-color-scheme: dark) {
-  .btn-wrapper button {
+  .btn-wrapper button, .btn-wrapper input[type=submit] {
     background-color: #CFCFCF;
     color: #353535;
   }
@@ -370,6 +370,54 @@ main {
   width: 300px;
   background-color: rgb(233, 244, 255);
   border-radius: 10px;
+}
+
+.location {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.location input[type=text] {
+  width: 100%;
+  box-sizing: border-box;
+  color: #353535;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  border: 2px solid #294285;
+  border-radius: 5px;
+  padding-left: 0.3rem;
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .location input {
+    color: #CFCFCF;
+    border: 2px solid #FFFF9E;
+  }
+}
+#error {
+  display: none;
+  margin-top: 0.3rem;
+  margin: 0;
+  padding: 0;
+  color: #87181b;
+}
+
+@media (prefers-color-scheme: dark) {
+  #error {
+    color: #FFC2C3;
+  }
+}
+#map {
+  width: 100%;
+  box-sizing: border-box;
+  height: 300px;
 }
 
 body {

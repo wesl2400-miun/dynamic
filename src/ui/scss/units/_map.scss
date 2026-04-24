@@ -1,0 +1,7 @@
+@use '../base/dimens';
+
+// Stillmallen för kartan
+#map {
+  @include dimens.border-width(100%);
+  height: 300px;
+}

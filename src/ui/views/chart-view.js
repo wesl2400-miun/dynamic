@@ -1,4 +1,4 @@
-import { Stats } from "../../logic/feature/Stats.js";
+import { GetStats } from "../../logic/feature/GetStats.js";
 import { URL } from "../../logic/refs/url.js";
 import { STAT_TYPE } from "../../logic/refs/stat-type.js";
 import { format, node } from "../utils/utils.js";
@@ -7,7 +7,7 @@ import { NODE_ID } from "../refs/node-id.js";
 
 Chart.defaults.color = '#363636';
 
-const stats = new Stats();
+const stats = new GetStats();
   await stats.init(URL.COURSES);
   const courses = stats
     .popCourses(STAT_TYPE.COURSE, 6);

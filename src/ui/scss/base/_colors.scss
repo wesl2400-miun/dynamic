@@ -9,6 +9,8 @@ $primary-dark: #353535;
 $surface-dark: color.scale($primary-dark, $whiteness: 20%);;
 $accent-dark: #CFCFCF;
 $accent-variant-dark: #FFFF9E;
+$error-light: #87181b;
+$error-dark: #FFC2C3;
 
 // Ändrar bakgrundsfärgen och bockar av grundkravet för if-satser och mixins
 @mixin background($color, $mode) {
@@ -36,7 +38,7 @@ $accent-variant-dark: #FFFF9E;
     } @else {
       background-color: $surface-light;
     }
-  } 
+  }
 }
 
 // Ändrar förgrundsfärgen
@@ -64,6 +66,12 @@ $accent-variant-dark: #FFFF9E;
       color: $surface-dark;
     } @else {
       color: $surface-light;
+    } 
+  } @else if $color == 'error' {
+    @if $mode == 'dark' {
+      color: $error-dark;
+    } @else {
+      color: $error-light;
     }
   } 
 }

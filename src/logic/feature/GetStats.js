@@ -2,7 +2,7 @@ import { Stat } from "../model/Stat.js";
 import { STAT_TYPE } from "../refs/stat-type.js";
 import { limitArrBy, query, sortByTot } from "../utils/utils.js";
 
-export class Stats {
+export class GetStats {
   constructor() {
     this._courses = [];
     this._programs = [];

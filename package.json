@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "chart.js": "^4.5.1",
-    "chartist": "^1.5.0",
     "run": "^1.5.0",
     "sass": "^1.99.0",
     "svgo": "^4.0.1",

@@ -10,6 +10,10 @@
 @use './base/anime';
 @use './units/button';
 @use './units/diagram';
+@use './units/location';
+@use './units/error';
+@use './units/map';
+
 
 // Stillmallen för hela body-elemenetet
 body {

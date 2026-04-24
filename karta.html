@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="./src/ui/assets/mittfavicon.svg">
     <link rel="stylesheet" href="./src/ui/css/root.css">
+
+    <!-- Leaflet kod för CSS och logiken -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO -->
@@ -41,9 +51,21 @@
       <h1 id="page-title">Karta</h1>
 
       <section class="card">
+        <h2>Sök efter plats</h2>
+        <form class="location">
+          <label for="loc-input">Plats:</label>
+          <input id="loc-input" name="loc-input" type="text" placeholder="Stockholm">
+          <p id="error"></p>
+          <div class="btn-wrapper">
+            <input class="btn-anime" id="submit-loc" type="submit" value="Hitta plats">
+          </div>
+        </form>
+        <div id="map"></div>
       </section>
 
     </main>
+     <!-- Skript som genererar kartor -->
+    <script type="module" src="./src/ui/views/maps-view.js"></script>
 
     <!-- Skript som genererar navigeringsfältet och logotypen -->
     <script type="module" src="./src/ui/views/nav-view.js"></script>

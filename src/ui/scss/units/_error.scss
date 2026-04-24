@@ -1,0 +1,17 @@
+@use '../base/colors';
+@use '../base/dimens';
+
+// Stillmallen för fel som visas i platsformuläret
+#error {
+  display: none;
+  margin-top: 0.3rem;
+  @include dimens.no-margins;
+  @include colors.foreground('error', 'light');
+}
+
+// Nattläget för fel som visas i platsformuläret
+@media (prefers-color-scheme: dark) {
+  #error {
+    @include colors.foreground('error', 'dark');
+  }
+}

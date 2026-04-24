@@ -1,0 +1,30 @@
+@use '../base/dimens';
+@use '../base/layout';
+@use '../base/colors';
+
+// Stillmallen för location-formuläret
+.location {
+  @include dimens.border-width(100%);
+  @include layout.flex(column, center, start, 'visible');
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.location input[type='text'] {
+  @include dimens.border-width(100%);
+  @include colors.foreground('accent', 'light');
+  line-height: 2rem;
+  font-size: 1.2rem;
+  border: 2px solid colors.$accent-variant-light;
+  border-radius: 5px;
+  padding-left: 0.3rem;
+  margin: 0;
+}
+
+// Nattläget för location-formuläret
+@media (prefers-color-scheme: dark) {
+  .location input {
+    @include colors.foreground('accent', 'dark');
+    border: 2px solid colors.$accent-variant-dark;
+  }
+}

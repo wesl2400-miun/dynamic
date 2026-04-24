@@ -12,5 +12,9 @@ export const NODE_ID = Object.freeze({
   DEMO_BTN3: 'demo-btn3',
   FOOTBALL: 'football',
   COURSES: 'courses',
-  PROGRAMS: 'programs'
+  PROGRAMS: 'programs',
+  LOC_INPUT: 'loc-input',
+  MAP: 'map',
+  SUB_LOC_BTN: 'submit-loc',
+  ERROR: 'error'
 });
