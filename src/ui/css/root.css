@@ -427,6 +427,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #ffffff;
   padding: 1rem 0;
   border-bottom: 1px solid #353535;
 }
@@ -443,6 +444,7 @@ main {
 @media (prefers-color-scheme: dark) {
   .jsdoc {
     border-bottom: 1px solid #CFCFCF;
+    background-color: #353535;
   }
   .jsdoc a,
   .jsdoc a:link,

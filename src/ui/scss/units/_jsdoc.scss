@@ -5,6 +5,7 @@
 .jsdoc {
   @include dimens.border-width(100%);
   @include layout.flex(column, center, center, 'visible');
+  @include colors.background('primary', 'light');
   padding: 1rem 0;
   border-bottom: 1px solid colors.$accent-light;
 
@@ -24,6 +25,7 @@
 @media (prefers-color-scheme: dark) {
   .jsdoc {
     border-bottom: 1px solid colors.$accent-dark;
+    @include colors.background('primary', 'dark');
   }
 
   .jsdoc a,
