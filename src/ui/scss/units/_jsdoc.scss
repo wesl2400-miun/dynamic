@@ -1,0 +1,34 @@
+@use '../base/dimens';
+@use '../base/layout';
+@use '../base/colors';
+
+.jsdoc {
+  @include dimens.border-width(100%);
+  @include layout.flex(column, center, center, 'visible');
+  padding: 1rem 0;
+  border-bottom: 1px solid colors.$accent-light;
+
+  &:hover {
+    font-size: 1.2rem;
+  }
+}
+
+// Stillmallen för JSDoc-länken
+.jsdoc a,
+.jsdoc a:link,
+.jsdoc a:visited {
+  @include colors.foreground('accent-variant', 'light');
+}
+
+// Nattläget för JSDoc-länken
+@media (prefers-color-scheme: dark) {
+  .jsdoc {
+    border-bottom: 1px solid colors.$accent-dark;
+  }
+
+  .jsdoc a,
+  .jsdoc a:link,
+  .jsdoc a:visited  {
+    @include colors.foreground('accent-variant', 'dark');
+  }
+}

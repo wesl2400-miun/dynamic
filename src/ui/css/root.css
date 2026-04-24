@@ -420,6 +420,36 @@ main {
   height: 300px;
 }
 
+.jsdoc {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 0;
+  border-bottom: 1px solid #353535;
+}
+.jsdoc:hover {
+  font-size: 1.2rem;
+}
+
+.jsdoc a,
+.jsdoc a:link,
+.jsdoc a:visited {
+  color: #294285;
+}
+
+@media (prefers-color-scheme: dark) {
+  .jsdoc {
+    border-bottom: 1px solid #CFCFCF;
+  }
+  .jsdoc a,
+  .jsdoc a:link,
+  .jsdoc a:visited {
+    color: #FFFF9E;
+  }
+}
 body {
   display: flex;
   justify-content: center;
