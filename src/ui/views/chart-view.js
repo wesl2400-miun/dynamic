@@ -50,7 +50,7 @@ const progData = {
   labels: programs.map(
     course => course.name),
   datasets: [{
-    label: 'Mest sökta program',
+    label: 'Totalt antal sökande',
     data: programs.map(
       course => course.total),
   }]
