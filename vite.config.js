@@ -15,7 +15,9 @@ export default defineConfig({
         main: 'index.html',
         gallery: 'gallery.html',
         workflow: 'sass.html',
-        animering: 'animering.html'
+        animering: 'animering.html',
+        diagram: 'diagram.html',
+        karta: 'karta.html'
       }
     }
   },
