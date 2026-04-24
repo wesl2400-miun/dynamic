@@ -10,7 +10,8 @@
     "sass": "sass ./src/ui/scss:./src/ui/css"
   },
   "devDependencies": {
-    "vite": "^8.0.4"
+    "vite": "^8.0.4",
+    "jsdoc": "^4.0.5"
   },
   "dependencies": {
     "chart.js": "^4.5.1",

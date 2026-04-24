@@ -1,11 +1,24 @@
 import { Picture } from "../units/Picture";
 
-// Hämta ett existerande HTML-element via en referens
+/** 
+* Hämtar ett existerande HTML-element
+* @function
+* @param {string} ref - Referensen till ett existerande HTML-element
+* @returns {HTMLElement | HTMLInputElement} 
+*/
 export const node = (ref) => {
   return document.getElementById(ref);
 }
 
-// Skapa ett HTML-element
+/** 
+* Skapar ett nytt HTML-element
+* @function
+* @param {string} type - Typen av HTML-element
+* @param {string | null} text - textContent för ett HTML-element
+* @param {string} style - CSS-klass
+* @param {HTMLElement | null} parent - Det element som det nya elementet ska knytas till
+* @returns {HTMLElement | HTMLInputElement} 
+*/
 export const newNode = (type, text = null, 
   style = null, parent = null) => {
   const tag = document.createElement(type);
@@ -15,7 +28,17 @@ export const newNode = (type, text = null,
   return tag;
 }
 
-// Skapa ett Picture-objekt basert på en lista av responsiva bilder
+/** 
+* Skapar en responsiv bild baserat på den bildarrayen som
+* Vite ImageTools generar dynamiskt
+* @function
+* @param {string[]} img - en array av strängar med URL:er till
+* en viss bild med de olika dimensioner som genererats dynamiskt
+* med Vite ImageTools
+* @param {string} alt - alternativtext för fallback-bilden
+* @param {HTMLElement} parent - Till detta element ska bilden knytas till
+* @returns {HTMLElement} - Returnerar picture-elementet
+*/
 export const picture = (img, alt, parent) => {
   const pic = new Picture(parent);
   const last = img.length - 1;
@@ -28,11 +51,22 @@ export const picture = (img, alt, parent) => {
   return pic;
 }
 
-// Lägger till en svg-bild dynamiskt (Respekterar nattläge)
+/** 
+* Lägger till en svg-bild dynamiskt (Respekterar natt- respektive dagsläget)
+* @function
+* @param {HTMLElement} parent - Detta element ska svg-bilden knytas till
+* @param {SVGSVGElement} svg - En rå svg-bild
+*/
 export const addSvg = (parent, svg) => {
   parent.innerHTML = svg;
 }
 
+/** 
+* Formatera en sträng så att den visas tydligt i stapeldiagrammet
+* @function
+* @param {string} str - Den sträng som ska formateras
+* @returns {string} - Returnerar den formaterade strängen
+*/
 export const format = (str) => {
   return str.replaceAll(' ', '\n');
 }

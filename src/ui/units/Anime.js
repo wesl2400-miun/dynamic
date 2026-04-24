@@ -1,11 +1,26 @@
 
-// Inkapslar logiken för animationer
+/** 
+* Knyter animationer till HTML-element
+*/
 export class Anime {
+  
+  /** 
+  * @constructor
+  */
   constructor() {
+
+    /** 
+    * @type {function[]}
+    */
     this._animes = [];
   }
 
-  // Koppla en animation till ett HTML-element och lagra aktionen i en array
+  /** 
+  * Tilldela ett HTML-element en CSS-klass med en animation
+  * och spara denna aktion i funktionslistan this._animes för senare
+  * @param {HTMLElement} node - Detta element ska animationen knytas till
+  * @param {string} aniClass - CSS klass med animation
+  */
   add = (node, aniClass) => {
     this._animes.push(() => {
       node.classList
@@ -16,7 +31,11 @@ export class Anime {
     })
   }
 
-  // Tilldela knappen en händelse så att animation-arrayen startar med ett klick
+  /** 
+  * Tilldela knappen en händelse så att alla animationsklasser läggs till
+  * lämpliga HTML-element
+  * @param {HTMLElement} button
+  */
   wire = (button) => {
     button.addEventListener(
       'click', () => {

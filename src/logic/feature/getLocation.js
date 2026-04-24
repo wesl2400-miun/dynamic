@@ -1,6 +1,14 @@
 import { API } from "../refs/api.js";
 import { query } from "../utils/utils.js";
 
+/**
+ * Hämtar koordinaterna för en vald ort från Nominati-API:t
+ * @async
+ * @function getLocation
+ * @param {string} city - vald plats
+ * @returns {Promise<{lat: string, lon: string} | string>}
+ */
+
 export const getLocation = 
   async (city) => {
   if(city.length === 0)

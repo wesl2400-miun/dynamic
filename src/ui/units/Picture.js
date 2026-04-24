@@ -1,15 +1,24 @@
 import { newNode } from "../utils/utils.js";
 
-// Picture-elementet
+/** 
+* Skapar dynamiskt ett picture-element
+*/
 export class Picture {
 
-  // parent är elementet som denna vy ska knytas till
+  /** 
+  * @constructor
+  * @param {HTMLElement} - Detta element knytts hela picture-elementet
+  */
   constructor(parent) {
     this._root = newNode('picture', 
       null, null, parent);
   }
 
-  // Lägg till ett source-element för en bild med en specifik skärpunkt
+  /** 
+  * Lägg till source-elementet
+  * @param {string} src - URL:en där den valda bilden finns
+  * @param {string} brPoint - Skärpunkten för responsivitetets skull
+  */
   addSource = (src, brPoint) => {
     const source = newNode('source', 
       null, null, this._root);
@@ -18,7 +27,11 @@ export class Picture {
       `(min-width: ${brPoint}px)`;
   }
 
-  // Lägg till ett fallback img-element för en bild med en alternativ text
+  /** 
+  * Skapar en fallback-bild
+  * @param {string} src - URL:en där den valda bilden finns
+  * @param {string} alt - Alternativ text för den valda bilden
+  */
   addFallback = (src, alt) => {
     const img = newNode('img', 
       null, null, this._root);
@@ -29,6 +42,8 @@ export class Picture {
     img.fetchPriority = 'high';
   }
 
-  // Returnerar Picture-elementet
+  /** 
+  * @returns {HTMLElement} - Returnerar picture-elementet
+  */
   root = () => this._root;
 }
